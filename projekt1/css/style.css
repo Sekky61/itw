@@ -1,8 +1,186 @@
 /*
- * Login:
+ * Login: xmajer21
  *
  * Doplnte sve reseni.
  *
  * Nezapomente pridat strucne hromadne komentare pro pravidla jednotlivych sekci
  * a pro netrivialni useky kodu (napr. bubliny v sekci #refs)
  */
+
+ /* Preflight, reset margins */
+body,
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+ul,
+pre {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+ul {
+    padding-inline-start: 0px;
+}
+
+/* Color palette, variables */
+
+:root {
+    --brown: #3c1f0a;
+    --font-size-1: 14px;
+    --font-size-2: 18px;
+    --font-size-h2-1: 40px;
+    --font-size-h2-2: 32px;
+    --font-size-h3: 24px;
+    --line-height: 170%;
+
+    --gray: #898989;
+    --light-gray: #bfbfbf;
+    --dark-gray: #4d4d4d;
+    --off-white: #f7f7f7;
+    --black: black;
+    --white: white;
+    --blue: steelblue;
+
+    --rounded-radius: 5px;
+    --shadow-size: 10px;
+    --animation-length: 0.5s;
+}
+
+body {
+    font-family: "PT Sans"; /* Global font */
+    font-size: 12pt;
+}
+
+.content {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ---------- Header ---------- */
+
+#header {
+    width: 100%;
+    height: 100vh;
+    min-height: 400px;
+    color: var(--white);
+    /*image header.jpg*/
+    background-image: url("../img/header.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-attachment: local;
+}
+
+#header-menu {
+    position: relative;
+}
+
+#contacts {
+    position: absolute;
+    top: 20px;
+    right: 0px;
+    color: var(--gray)
+}
+
+#contacts span {
+    padding-right: 8px;
+}
+
+#contacts i {
+    padding-right: 5px;
+}
+
+#networks {
+    position: absolute;
+    top: 60px;
+    right: 0px;
+}
+
+#logo {
+    padding-top: 10px;
+    font-size: 25px;
+    padding-bottom: 15px;
+}
+
+.fas {
+    color: var(--blue);
+}
+
+.fab {
+    color: var(--blue);
+    font-size: 20pt;
+    letter-spacing: .15em;
+}
+
+/*logo-font*/
+.fa-bomb ~ a {
+    font-family: 'Special Elite';
+    color: var(--blue);
+}
+
+#navigation ul {
+    display: flex;
+    gap: 10px;
+}
+
+#navigation li {
+    list-style-type: none;
+    padding: 5px 15px;
+    font-size: 13pt;
+    letter-spacing: .05em;
+    border: 1px solid transparent;
+}
+
+#header-title {
+    position: absolute;
+    top: 66.6%;
+}
+
+#header-title h1 {
+    font-weight: bold;
+    font-size: 64px;
+    color: white;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    padding-bottom: 60px;
+}
+
+/* get started style */
+#get-started a {
+    font-size: 18px;
+    padding: 20px;
+    border-radius: 15px;
+    margin-left: 20px; /*Match margin of #header-title h1*/
+    border: 2px solid var(--gray);
+    color: var(--gray);
+}
+
+#get-started a:hover {
+    border: 2px solid var(--white);
+    color: var(--white);
+}
+
+/* ---------- Services ---------- */
