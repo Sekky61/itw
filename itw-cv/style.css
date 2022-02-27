@@ -16,6 +16,11 @@ pre {
   margin: 0;
 }
 
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
 h1,
 h2,
 h3,
@@ -44,7 +49,7 @@ body {
 }
 
 p {
-    line-height: 140%;
+    line-height: 150%;
 }
 
 .max_width {
@@ -65,10 +70,10 @@ p {
 }
 
 /*cancel link highlight*/
-.navbar-content a {
+/* .navbar-content a {
     color: inherit;
     text-decoration: none;
-}
+} */
 
 .navbar-content nav {
     position: absolute;
@@ -127,8 +132,13 @@ p {
 .sec_o_predmetu {
     background: linear-gradient(180deg, white 0%, rgba(227,227,227,1) 100%);
     padding-top: 30px;
-    padding-bottom: 60px;
+    padding-bottom: 70px;
+    margin-bottom: 20px;
     font-size: 12px;
+}
+
+.sec_o_predmetu b {
+    font-weight: inherit;
 }
 
 /* Přednášky */
@@ -137,6 +147,7 @@ section h2 {
     color: var(--light-brown);
     font-size: 14pt;
     margin-bottom: 8px;
+    font-weight: bold;
 }
 
 .sec_prednasky div {
@@ -149,8 +160,8 @@ section h2 {
 
 .sec_prednasky div a {
     display: block;
-    color: inherit;
-    text-decoration: none;
+    /*color: inherit;*/
+    /*text-decoration: none;*/
     font-weight: bold;
     border-bottom: 1px dotted var(--light-brown);
 }
@@ -191,14 +202,72 @@ tbody tr td:not(:first-child) {
     text-align: center;
 }
 
+.sec_cviceni h2 {
+    margin-bottom: 30px;
+}
+
+.sec_cviceni div {
+    border-bottom: 1px dotted var(--light-brown);
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.sec_cviceni a {
+    color: var(--brown);
+    font-weight: bold;
+    display: block;
+    padding-bottom: 18px;
+}
+
+.sec_cviceni img {
+    padding-right: 20px;
+}
+
 /*footer*/
 
 footer {
     background-color: var(--brown);
+    font-size: 11pt;
     color: white;
     padding: 20px 0px;
 }
 
 footer section h2 {
     color: white;
+    padding-bottom: 10px;
 }
+
+dl {
+    width: 300px;
+}
+
+dt {
+    float: left;
+    clear: left;
+    width: 100px;
+  }
+
+dt::after {
+    content: ":";
+}
+
+dd {
+    text-align: right;
+    color: var(--light-brown)
+}
+
+#rights {
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+
+.checkmark-list {
+    list-style: none;
+    padding-inline-start: 0px;
+    color: var(--light-brown);
+  }
+  
+.checkmark-list li:before {
+    content: '✓';
+  }
