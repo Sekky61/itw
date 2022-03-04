@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <div class="top-bar">
+  <div class="top_bar">
     <div class="navbar-content max_width">
 
       <h1 id="heading">
@@ -74,37 +74,48 @@
       </div>
     </section>
   </div>
-  <div class="content_wrap">
-    <div class="max_width">
+  <div class="content_wrap max_width two_columns">
+    <div class="left_column">
       <section class="sec_prednasky">
         <h2 id="prednasky">Přednášky</h2>
-        <div>
-          <img alt="ikona" src="./index_files/icon1.gif">
-          <a href="https://www.fit.vutbr.cz/study/courses/ITW/private/prednasky/p01/index.html">Internet a služba WWW,
-            principy, adresování, umístění dokumentů
-          </a>
-          <p>Úvod do předmětu</p>
-        </div>
-        <div>
-          <img alt="ikona" src="./index_files/icon2.gif">
-          <a href="https://www.fit.vutbr.cz/study/courses/ITW/private/prednasky/p02/prednaska.html">Základy jazyka
-            HTML</a>
-          <p>Jazyk HTML a jeho základní konstrukce</p>
-        </div>
-        <div>
-          <img alt="ikona" src="./index_files/icon3.gif">
-          <a href="https://www.fit.vutbr.cz/study/courses/ITW/private/prednasky/p03/prednaska.html">Úvod do
-            kaskádových
-            stylů
-            (CSS)</a>
-          <p>Úvod do stylování dokumentů pomocí CSS</p>
-        </div>
-        <div>
-          <img alt="ikona" src="./index_files/icon4.gif">
-          <a href="https://www.fit.vutbr.cz/study/courses/ITW/private/prednasky/p04/prednaska.html">CSS - základní
-            principy:
-            kaskáda a dědičnost</a>
-          <p>Dědičnost CSS stylů</p>
+        <div class="prednasky_grid">
+          <div class="prednaska">
+            <img alt="ikona" src="./index_files/icon1.gif">
+            <div>
+              <a href="https://www.fit.vutbr.cz/study/courses/ITW/private/prednasky/p01/index.html">Internet a služba
+                WWW
+              </a>
+              <p>Úvod do předmětu</p>
+            </div>
+          </div>
+          <div class="prednaska">
+            <img alt="ikona" src="./index_files/icon2.gif">
+            <div>
+              <a href="https://www.fit.vutbr.cz/study/courses/ITW/private/prednasky/p02/prednaska.html">Základy jazyka
+                HTML</a>
+              <p>Jazyk HTML a jeho základní konstrukce</p>
+            </div>
+          </div>
+          <div class="prednaska">
+            <img alt="ikona" src="./index_files/icon3.gif">
+            <div>
+              <a href="https://www.fit.vutbr.cz/study/courses/ITW/private/prednasky/p03/prednaska.html">Úvod do
+                kaskádových
+                stylů
+                (CSS)</a>
+              <p>Úvod do stylování dokumentů pomocí CSS Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Deserunt culpa ea ducimus error itaque nulla omnis ad repellendus voluptate aliquid!</p>
+            </div>
+          </div>
+          <div class="prednaska">
+            <img alt="ikona" src="./index_files/icon4.gif">
+            <div>
+              <a href="https://www.fit.vutbr.cz/study/courses/ITW/private/prednasky/p04/prednaska.html">CSS - základní
+                principy:
+                kaskáda a dědičnost</a>
+              <p>Dědičnost CSS stylů</p>
+            </div>
+          </div>
         </div>
       </section>
       <section class="sec_vysledky">
@@ -152,30 +163,39 @@
           </tbody>
         </table>
       </section>
-      <section class="sec_cviceni">
-        <h2 id="cviceni">Cvičení</h2>
-        <div>
-          <a href="https://www.fit.vutbr.cz/study/courses/ITW/private/cviceni/#c1">DNS a HTTP</a>
-          <img alt="ikona" src="./index_files/news_icon.gif">
-          <span>Přehled DNS, wget, prohlížeče.</span>
-        </div>
-        <div>
-          <a href="https://www.fit.vutbr.cz/study/courses/ITW/private/cviceni/#c2">Jazyk HTML</a>
-          <img alt="ikona" src="./index_files/news_icon.gif">
-          <span>Základní konstrukce jazyka HTML</span>
-        </div>
-        <div>
-          <a href="https://www.fit.vutbr.cz/study/courses/ITW/private/cviceni/#c3">Styl textu</a>
-          <img alt="ikona" src="./index_files/news_icon.gif">
-          <span>Základní vzhlednová úprava webové stránky pomocí CSS stylů.</span>
-        </div>
-        <div>
-          <a href="https://www.fit.vutbr.cz/study/courses/ITW/private/cviceni/#c4">CSS rozložení stránky</a>
-          <img alt="ikona" src="./index_files/news_icon.gif">
-          <span>Pokračování CSS.</span>
-        </div>
-      </section>
     </div>
+    <section class="sec_cviceni">
+      <h2 id="cviceni">Cvičení</h2>
+      <div class="cviceni">
+        <a href="https://www.fit.vutbr.cz/study/courses/ITW/private/cviceni/#c1">DNS a HTTP</a>
+        <div>
+          <img alt="ikona" src="./index_files/news_icon.gif">
+          <p>Přehled DNS, wget, prohlížeče. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe tempora
+            distinctio maxime sequi cumque reiciendis doloribus laudantium error illo. Voluptates.</p>
+        </div>
+      </div>
+      <div class="cviceni">
+        <a href="https://www.fit.vutbr.cz/study/courses/ITW/private/cviceni/#c2">Jazyk HTML</a>
+        <div>
+          <img alt="ikona" src="./index_files/news_icon.gif">
+          <p>Základní konstrukce jazyka HTML</p>
+        </div>
+      </div>
+      <div class="cviceni">
+        <a href="https://www.fit.vutbr.cz/study/courses/ITW/private/cviceni/#c3">Styl textu</a>
+        <div>
+          <img alt="ikona" src="./index_files/news_icon.gif">
+          <p>Základní vzhlednová úprava webové stránky pomocí CSS stylů.</p>
+        </div>
+      </div>
+      <div class="cviceni">
+        <a href="https://www.fit.vutbr.cz/study/courses/ITW/private/cviceni/#c4">CSS rozložení stránky</a>
+        <div>
+          <img alt="ikona" src="./index_files/news_icon.gif">
+          <p>Pokračování CSS.</p>
+        </div>
+      </div>
+    </section>
   </div>
   <footer>
 

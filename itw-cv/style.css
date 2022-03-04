@@ -38,7 +38,7 @@ h6 {
     --light-brown: #b15e23;
     --table-brown: #d5a17c;
     --gray: #656565;
-    --content-w: 1280px;
+    --content-w: 960px;
 
     --nav-item-bottom-gap: 2px;
 }
@@ -50,7 +50,9 @@ body {
 }
 
 p {
-    line-height: 170%;
+    line-height: 150%;
+    font-size: 10pt;
+    text-align: justify;
 }
 
 .max_width {
@@ -58,11 +60,10 @@ p {
     margin: auto;
 }
 
-.top-bar {
+.top_bar {
     background-image: url("index_files/bg.jpg");
     width: 100%;
-    height: 457px;
-    margin-bottom: 15px;
+    margin-bottom: 3px;
 }
 
 .navbar-content {
@@ -120,14 +121,28 @@ p {
     font-weight: bold;
 }
 
+section h2 {
+    color: var(--light-brown);
+    font-size: 14pt;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+.two_columns {
+    padding-top: 15px;
+    background-image: url("index_files/center_bg.gif");
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 10px;
+}
+
 /* O předmětu */
 
 .sec_o_predmetu {
     background: linear-gradient(180deg, white 0%, rgba(227,227,227,1) 100%);
     padding-top: 30px;
     padding-bottom: 70px;
-    margin-bottom: 20px;
-    font-size: 12px;
+    font-size: 10pt;
     color: var(--gray);
     text-align: justify;
 }
@@ -138,29 +153,41 @@ p {
 
 /* Přednášky */
 
-section h2 {
-    color: var(--light-brown);
-    font-size: 14pt;
-    margin-bottom: 8px;
-    font-weight: bold;
+.prednasky_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 10px;
+    padding-right: 15px;
 }
 
-.sec_prednasky div {
-    margin-bottom: 12px;
+.prednaska {
+    display: flex;
+    gap: 10px;
 }
 
-.sec_prednasky div img {
-    display: block;
+.prednaska div {
+    flex-grow: 1;
 }
 
-.sec_prednasky div a {
+.prednaska img {
+    object-fit: contain;
+    align-self: start;
+}
+
+.prednaska a {
     display: block;
     color: var(--brown);
     font-weight: bold;
     border-bottom: 1px dotted var(--light-brown);
+    padding-bottom: 3px;
+    margin-bottom: 8px;
 }
 
 /*table*/
+
+.sec_vysledky {
+    padding-top: 20px;
+}
 
 table {
     margin-bottom: 10px;
@@ -196,11 +223,21 @@ tbody tr td:not(:first-child) {
     text-align: center;
 }
 
+/* right column */
+.sec_cviceni {
+    padding-left: 30px;
+}
+
 .sec_cviceni h2 {
     margin-bottom: 30px;
 }
 
-.sec_cviceni div {
+.cviceni div {
+    display: flex;
+    gap: 15px;
+}
+
+.cviceni {
     border-bottom: 1px dotted var(--light-brown);
     padding-bottom: 10px;
     margin-bottom: 30px;
@@ -210,11 +247,12 @@ tbody tr td:not(:first-child) {
     color: var(--brown);
     font-weight: bold;
     display: block;
-    padding-bottom: 18px;
+    padding-bottom: 10px;
 }
 
 .sec_cviceni img {
-    padding-right: 20px;
+    object-fit: contain;
+    align-self: center;
 }
 
 /*footer*/
