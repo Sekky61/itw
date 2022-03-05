@@ -264,13 +264,18 @@ footer {
     padding: 20px 0px;
 }
 
+.footer_flex {
+    display: flex;
+    gap: 70px;
+}
+
 footer section h2 {
     color: white;
     padding-bottom: 10px;
 }
 
-dl {
-    width: 300px;
+.sec_kontakt {
+    width: 290px;
 }
 
 dt {
