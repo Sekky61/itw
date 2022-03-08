@@ -74,9 +74,27 @@ body {
     font-size: 12pt;
 }
 
+main {
+    margin: 0px 20px;
+}
+
 .content {
     max-width: 1200px;
     margin: auto;
+}
+
+p {
+    line-height: var(--line-height);
+    color: var(--gray);
+}
+
+h3 {
+    font-size: var(--font-size-h3);
+}
+
+section {
+    margin-top: 60px;
+    margin-bottom: 80px;
 }
 
 /* ---------- Header ---------- */
@@ -171,7 +189,7 @@ body {
     font-size: 13pt;
     letter-spacing: .05em;
     border: 1px solid transparent;
-    transition: all 1s linear;
+    transition: all var(--animation-length) linear;
 }
 
 #navigation li:hover {
@@ -203,7 +221,7 @@ body {
     color: var(--gray);
     font-size: 18px;
     width: fit-content;
-    transition: all 0.3s linear;
+    transition: all var(--animation-length) linear;
 }
 
 #get-started a {
@@ -218,3 +236,66 @@ body {
 }
 
 /* ---------- Services ---------- */
+
+#services {
+    text-align: center;
+}
+
+#services h2 {
+    font-size: var(--font-size-h2-1);
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+#services .content > div {
+    margin: auto;
+    width: fit-content;
+    display: grid;
+    margin-top: 40px;
+    gap: 40px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.services-card {
+    width: 300px;
+    padding: 15px;
+    border-radius: var(--rounded-radius);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 0px var(--shadow-size);
+}
+
+.services-card:hover {
+    width: 300px;
+    border-radius: var(--rounded-radius);
+    box-shadow: var(--blue) 0px 0px var(--shadow-size);
+}
+
+.services-card > div {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.services-card > p {
+    color: var(--light-gray);
+}
+
+.services-card h3 {
+    font-weight: bold;
+}
+
+.services-card img {
+    width: 50px;
+    padding: 5px;
+    border: 1px solid var(--blue);
+}
+
+.services-card  img:first-child {
+    background-color: red;
+    color: green;
+}
+
+/* ---------- About ---------- */
+
+#about {
+    background-color: var(--off-white);
+}
