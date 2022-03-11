@@ -38,7 +38,7 @@ h6 {
     --light-brown: #b15e23;
     --table-brown: #d5a17c;
     --gray: #656565;
-    --content-w: 960px;
+    --content-w: 1200px;
 
     --nav-item-bottom-gap: 2px;
 }
@@ -60,8 +60,19 @@ p {
     margin: auto;
 }
 
+.grain_texture {
+    background-image: url("index_files/footer_bg.gif");
+}
+
+.grad_right {
+    --grad_dir: 180deg;
+}
+
+.gradient_bg {
+    background: linear-gradient(var(--grad_dir), lightgray 0%, white 100%);
+}
+
 .top_bar {
-    background-image: url("index_files/bg.jpg");
     width: 100%;
     margin-bottom: 3px;
 }
@@ -109,9 +120,8 @@ p {
 }
 
 #heading {
-    font-size: 42pt;
+    font-size: 4rem;
     font-weight: bold;
-    font-style: italic;
     padding-top: 20px;
 }
 
@@ -130,9 +140,8 @@ section h2 {
 
 .two_columns {
     padding-top: 15px;
-    background-image: url("index_files/center_bg.gif");
     display: grid;
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: 6fr 5fr;
     gap: 10px;
 }
 
@@ -258,7 +267,6 @@ tbody tr td:not(:first-child) {
 /*footer*/
 
 footer {
-    background-image: url("index_files/footer_bg.gif");
     font-size: 11pt;
     color: white;
     padding: 20px 0px;
