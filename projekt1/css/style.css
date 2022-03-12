@@ -74,13 +74,10 @@ body {
     font-size: 12pt;
 }
 
-main {
-    margin: 0px 20px;
-}
-
 .content {
     max-width: 1200px;
     margin: auto;
+    padding: 0px 20px;
 }
 
 p {
@@ -90,6 +87,8 @@ p {
 
 h3 {
     font-size: var(--font-size-h3);
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
 section {
@@ -241,6 +240,10 @@ section {
     text-align: center;
 }
 
+#services .content > p {
+    font-size: var(--font-size-2);
+}
+
 #services h2 {
     font-size: var(--font-size-h2-1);
     font-weight: bold;
@@ -264,6 +267,10 @@ section {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 0px var(--shadow-size);
 }
 
+.services-card p {
+    font-size: var(--font-size-1);
+}
+
 .services-card:hover {
     width: 300px;
     border-radius: var(--rounded-radius);
@@ -279,23 +286,112 @@ section {
     color: var(--light-gray);
 }
 
-.services-card h3 {
-    font-weight: bold;
-}
-
 .services-card img {
     width: 50px;
     padding: 5px;
     border: 1px solid var(--blue);
+    border-radius: var(--rounded-radius);
 }
 
-.services-card  img:first-child {
-    background-color: red;
-    color: green;
+.services-card  img:last-child {
+    display: none;
+    background-color: var(--blue);
+}
+
+.services-card:hover  img:first-child {
+    display: none;
+}
+
+.services-card:hover  img:last-child {
+    display: inline-block;
 }
 
 /* ---------- About ---------- */
 
 #about {
     background-color: var(--off-white);
+}
+
+#about p {
+    font-size: var(--font-size-2);
+}
+
+#about .content {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about-item img {
+    margin: 20px 80px;
+    width: 40%;
+    border-radius: var(--rounded-radius);
+    transition: all var(--animation-length);
+}
+
+.about-item img:hover {
+    width: 50%;
+}
+
+.about-item h2 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: var(--font-size-h2-2);
+    font-weight: bold;
+}
+
+#about .content .about-item:nth-child(2n+1) img {
+    float: left;
+}
+
+#about .content .about-item:nth-child(2n) img {
+    float: right;
+}
+
+/* ---------- Team ---------- */
+
+#team .content {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#team h2 {
+    flex-basis: 100%;
+    font-size: var(--font-size-h2-1);
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.team-card {
+    flex-grow: 1;
+    flex-basis: 0;
+
+    border-radius: var(--rounded-radius);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 0px var(--shadow-size);
+    overflow: hidden;
+    text-align: center;
+
+    padding-bottom: 20px;
+}
+
+.team-card img {
+    width: 100%;
+    padding-bottom: 40px;
+}
+
+.team-card h4 {
+    color: var(--gray);
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.team-card p {
+    color: var(--light-gray);
+    font-size: var(--font-size-1);
 }
