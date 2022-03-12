@@ -267,6 +267,10 @@ section {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 0px var(--shadow-size);
 }
 
+.services-card:hover h3 {
+    color: var(--blue);
+}
+
 .services-card p {
     font-size: var(--font-size-1);
 }
@@ -385,6 +389,15 @@ section {
     padding-bottom: 40px;
 }
 
+.team-card:hover {
+    box-shadow: var(--blue) 0px 0px var(--shadow-size);
+}
+
+
+.team-card:hover h3 {
+    color: var(--blue);
+}
+
 .team-card h4 {
     color: var(--gray);
     font-weight: bold;
@@ -394,4 +407,81 @@ section {
 .team-card p {
     color: var(--light-gray);
     font-size: var(--font-size-1);
+}
+
+/* ---------- Stats ---------- */
+
+#stats {
+    border-top: 1px dashed black;
+    padding: 60px 0px;
+}
+
+#stats .content {
+    display: flex;
+    flex: 1;
+    gap: 20px;
+    justify-content: center;
+}
+
+.stats-card {
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 300px;
+    background-color: var(--dark-gray);
+    color: var(--white);
+    border-radius: var(--rounded-radius);
+    text-align: center;
+    padding: 10px;
+    padding-top: calc(16px + 10px + 20px);
+    position: relative;
+}
+
+.stats-card p {
+    color: var(--light-gray);
+    font-size: var(--font-size-1);
+}
+
+.stats-card i {
+    background-color: var(--white);
+    padding: 10px;
+    border-radius: 100%;
+    color: var(--blue);
+    font-size: 32px;
+    position: absolute;
+    top: calc((32px + 20px) / -2);
+    left: calc(50% - 16px - 10px);
+}
+
+/* ---------- Price & Schedule ---------- */
+
+#price {
+    background-color: var(--off-white);
+}
+
+#price .content {
+    padding-top: 60px;
+}
+
+#price table {
+    width: 80%;
+    margin: auto;
+    border-spacing: 1px 20px;
+    text-align: left;
+}
+
+#price h2 {
+    font-size: var(--font-size-h2-2);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#price th {
+    padding: 20px;
+}
+
+#price td {
+    padding: 20px;
+    border-top: 1px dotted var(--blue);
+    border-bottom: 1px dotted var(--blue);
 }
