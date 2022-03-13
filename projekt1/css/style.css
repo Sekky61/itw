@@ -45,6 +45,13 @@ ul {
     padding-inline-start: 0px;
 }
 
+button {
+    border: 0px;
+    padding: 0px;
+    font-family: inherit;
+    appearance: none;
+}
+
 /* Color palette, variables */
 
 :root {
@@ -460,12 +467,13 @@ section {
 
 #price .content {
     padding-top: 60px;
+    padding-bottom: 80px;
 }
 
 #price table {
     width: 80%;
     margin: auto;
-    border-spacing: 1px 20px;
+    border-spacing: 0px 20px;
     text-align: left;
 }
 
@@ -485,3 +493,121 @@ section {
     border-top: 1px dotted var(--blue);
     border-bottom: 1px dotted var(--blue);
 }
+
+#price tr {
+    color: var(--gray);
+}
+
+#price tbody tr:hover {
+    background-color: var(--white);
+    color: var(--blue);
+}
+
+#price ul {
+    list-style-position: inside;
+}
+
+#price td li {
+    padding-bottom: 5px;
+}
+
+#price td li:first-child {
+    list-style-type: none;
+    font-weight: bold;
+}
+
+#price td li:not(:first-child) {
+    padding-left: 2px;
+}
+
+#price button {
+    font-weight: 400;
+    background-color: inherit;
+    padding: 20px;
+    border: 1px solid var(--blue);
+    border-radius: var(--rounded-radius);
+}
+
+#price button:hover {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+/* ---------- Refs ---------- */
+
+#refs .content {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px dashed black;
+    padding-bottom: 80px;
+}
+
+.refs-card {
+    max-width: 400px;
+}
+
+.refs-card blockquote {
+    border-radius: var(--rounded-radius);
+    padding: 20px;
+    background-color: var(--dark-gray);
+    color: var(--white);
+    margin-bottom: 30px;
+    position: relative;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.refs-card blockquote span::before {
+    content: "\"";
+    font-style: italic;
+    font-size: 100px;
+    color: var(--blue);
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: -5px;
+}
+
+.refs-card blockquote:hover span::before {
+    color: var(--white);
+}
+
+.refs-card blockquote:hover {
+    background-color: var(--blue);
+}
+
+.refs-card blockquote:hover:after {
+    border-top-color: var(--blue);
+}
+
+.refs-card blockquote:after {
+    content: " ";
+    position: absolute;
+    top: 100%;
+    left: calc(10px + 60px/2);
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 20px 20px 0 0;
+    border-color: var(--dark-gray) transparent transparent transparent;
+}
+
+.refs-card figure {
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.refs-card h3 {
+    color: var(--gray);
+    font-weight: normal;
+    font-size: var(--font-size-1);
+}
+
+.refs-card img {
+    width: 60px;
+    border-radius: 100%;
+}
+
+/* ---------- Contact ---------- */
