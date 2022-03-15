@@ -81,10 +81,16 @@ body {
     font-size: 12pt;
 }
 
+section {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 60px;
+    padding-bottom: 80px;
+}
+
 .content {
     max-width: 1200px;
     margin: auto;
-    padding: 0px 20px;
 }
 
 p {
@@ -96,11 +102,6 @@ h3 {
     font-size: var(--font-size-h3);
     font-weight: bold;
     margin-bottom: 5px;
-}
-
-section {
-    margin-top: 60px;
-    margin-bottom: 80px;
 }
 
 /* ---------- Header ---------- */
@@ -325,11 +326,11 @@ section {
 
 #about p {
     font-size: var(--font-size-2);
+    text-align: justify;
+
 }
 
 #about .content {
-    padding-top: 40px;
-    padding-bottom: 40px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -347,18 +348,20 @@ section {
 }
 
 .about-item h2 {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
     font-size: var(--font-size-h2-2);
     font-weight: bold;
 }
 
 #about .content .about-item:nth-child(2n+1) img {
     float: left;
+    margin-left: 0px;
 }
 
 #about .content .about-item:nth-child(2n) img {
     float: right;
+    margin-right: 0px;
 }
 
 /* ---------- Team ---------- */
@@ -420,14 +423,14 @@ section {
 
 #stats {
     border-top: 1px dashed black;
-    padding: 60px 0px;
 }
 
 #stats .content {
     display: flex;
+    padding: 0px 20px;
     flex: 1;
     gap: 20px;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .stats-card {
@@ -463,11 +466,6 @@ section {
 
 #price {
     background-color: var(--off-white);
-}
-
-#price .content {
-    padding-top: 60px;
-    padding-bottom: 80px;
 }
 
 #price table {
@@ -535,26 +533,36 @@ section {
 
 /* ---------- Refs ---------- */
 
+/*
+    Grid with fractions has been tried with no success.
+    Hacky solution is the calc() of .refs-card width
+*/
+
+#refs {
+    border-bottom: 1px dashed black;
+}
+
 #refs .content {
     display: flex;
     justify-content: space-around;
-    border-bottom: 1px dashed black;
-    padding-bottom: 80px;
 }
 
 .refs-card {
     max-width: 400px;
+    width: calc((100% - 100px)/2);
 }
 
 .refs-card blockquote {
     border-radius: var(--rounded-radius);
-    padding: 20px;
+    padding: 20px 40px;
     background-color: var(--dark-gray);
     color: var(--white);
     margin-bottom: 30px;
     position: relative;
-    padding-left: 40px;
-    padding-right: 40px;
+}
+
+.refs-card blockquote span {
+    display: block;
 }
 
 .refs-card blockquote span::before {
@@ -568,16 +576,20 @@ section {
     top: -5px;
 }
 
-.refs-card blockquote:hover span::before {
+.refs-card:hover blockquote span::before {
     color: var(--white);
 }
 
-.refs-card blockquote:hover {
+.refs-card:hover blockquote {
     background-color: var(--blue);
 }
 
-.refs-card blockquote:hover:after {
+.refs-card:hover blockquote:after {
     border-top-color: var(--blue);
+}
+
+.refs-card:hover h3 {
+    color: var(--blue);
 }
 
 .refs-card blockquote:after {
@@ -595,6 +607,7 @@ section {
 .refs-card figure {
     margin-left: 10px;
     display: flex;
+    justify-items: normal;
     align-items: center;
     gap: 10px;
 }
