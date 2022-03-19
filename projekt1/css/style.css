@@ -79,7 +79,13 @@ button {
 body {
     font-family: "PT Sans"; /* Global font */
     font-size: 12pt;
+    min-width: 768px; /* Minimal site width */
 }
+
+/* Selection highlight */
+*::selection {
+    background: #a0a554;
+  }
 
 section {
     padding-left: 20px;
@@ -101,7 +107,6 @@ p {
 h3 {
     font-size: var(--font-size-h3);
     font-weight: bold;
-    margin-bottom: 5px;
 }
 
 /* ---------- Header ---------- */
@@ -268,11 +273,13 @@ h3 {
     grid-template-columns: 1fr 1fr;
 }
 
+/* One card */
 .services-card {
     width: 300px;
     padding: 15px;
+    box-sizing: border-box; /* Count padding as part of 300px width budget */
     border-radius: var(--rounded-radius);
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 0px var(--shadow-size);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 0px var(--shadow-size); /* Black shadow */
 }
 
 .services-card:hover h3 {
@@ -281,15 +288,16 @@ h3 {
 
 .services-card p {
     font-size: var(--font-size-1);
+    padding-top: 5px;
 }
 
 .services-card:hover {
-    width: 300px;
     border-radius: var(--rounded-radius);
-    box-shadow: var(--blue) 0px 0px var(--shadow-size);
+    box-shadow: var(--blue) 0px 0px var(--shadow-size); /* Blue shadow */
 }
 
-.services-card > div {
+/* Image padding */
+.services-card > div { 
     margin-top: 10px;
     margin-bottom: 30px;
 }
@@ -298,23 +306,29 @@ h3 {
     color: var(--light-gray);
 }
 
+/* Image */
+
 .services-card img {
     width: 50px;
+    box-sizing: border-box; /* Count padding as part of width */
     padding: 5px;
     border: 1px solid var(--blue);
     border-radius: var(--rounded-radius);
 }
 
+/* Blue image hidden by default */
 .services-card  img:last-child {
     display: none;
     background-color: var(--blue);
 }
 
-.services-card:hover  img:first-child {
+/* Hide white image */
+.services-card:hover img:first-child {
     display: none;
 }
 
-.services-card:hover  img:last-child {
+/* Show blue image */
+.services-card:hover img:last-child {
     display: inline-block;
 }
 
@@ -632,7 +646,6 @@ h3 {
 
 #contact .content {
     display: grid;
-    gap: 20px;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 
     "head head"
@@ -641,7 +654,9 @@ h3 {
 
 #contact form {
     grid-area: form;
-    padding: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
     display: grid;
     gap: 20px;
     grid-template-areas: 
@@ -672,6 +687,11 @@ h3 {
     border-radius: var(--rounded-radius);
     border: 1px solid var(--blue);
     padding: 10px;
+    color: var(--blue);
+}
+
+#contact input:invalid {
+    color: red;
 }
 
 #contact textarea:focus, input:focus {
@@ -695,6 +715,7 @@ h3 {
     border-radius: var(--rounded-radius);
     border: 1px solid var(--blue);
     padding: 10px;
+    color: var(--blue);
 }
 
 #contact input[type=submit] {
@@ -714,7 +735,7 @@ h3 {
 footer {
     background-color: black;
     color: var(--gray);
-    padding: 40px 0px;
+    padding: 40px 20px;
 }
 
 footer .content {
