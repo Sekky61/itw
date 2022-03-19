@@ -624,3 +624,104 @@ h3 {
 }
 
 /* ---------- Contact ---------- */
+
+#contact {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+#contact .content {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "head head"
+    "map form"
+}
+
+#contact form {
+    grid-area: form;
+    padding: 20px;
+    display: grid;
+    gap: 20px;
+    grid-template-areas: 
+"name email"
+"subject subject"
+"message message"
+"message message"
+"message message"
+"submit submit";
+}
+
+#contact h2 {
+    grid-area: head;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: var(--font-size-h2-1);
+    padding-bottom: 20px;
+}
+
+#map {
+    display: block;
+    height: 400px;
+    grid-area: map;
+}
+
+#contact input {
+    border-radius: var(--rounded-radius);
+    border: 1px solid var(--blue);
+    padding: 10px;
+}
+
+#contact textarea:focus, input:focus {
+    outline-color: green;
+}
+
+#contact input[name=name] {
+    grid-area: name;
+}
+
+#contact input[name=email] {
+    grid-area: email;
+}
+
+#contact input[name=subject] {
+    grid-area: subject;
+}
+
+#contact textarea {
+    grid-area: message;
+    border-radius: var(--rounded-radius);
+    border: 1px solid var(--blue);
+    padding: 10px;
+}
+
+#contact input[type=submit] {
+    grid-area: submit;
+    width: 50%;
+    margin: auto;
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+#contact input[type=submit]:hover {
+    background-color: green;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+    background-color: black;
+    color: var(--gray);
+    padding: 40px 0px;
+}
+
+footer .content {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer a {
+    color: var(--blue);
+}
