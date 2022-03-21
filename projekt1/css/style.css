@@ -116,7 +116,7 @@ h3 {
     height: 100vh;
     min-height: 400px;
     color: var(--white);
-    /*image header.jpg*/
+    /* image header.jpg */
     background-image: url("../img/header.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -124,22 +124,37 @@ h3 {
     background-attachment: local;
 }
 
-#header-menu {
-    position: relative;
-    height: 33.3%;
-}
-
 #header .content {
     height: 100%;
     display: grid;
     grid-template-rows: 1fr 2fr;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Top menu */
+#header-menu {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    margin-top: 10px;
+    row-gap: 10px;
+}
+
+#logo {
+    font-size: 25px;
+    flex-grow: 1;
+    flex-basis: 50%;
+}
+
+/* Margin between bomb logo and name */
+#logo i {
+    margin-right: 5px;
 }
 
 #contacts {
-    position: absolute;
-    top: 20px;
-    right: 0px;
-    color: var(--gray)
+    color: var(--gray);
+    margin-top: 10px;
 }
 
 #contacts span {
@@ -155,15 +170,8 @@ h3 {
 }
 
 #networks {
-    position: absolute;
-    top: 60px;
-    right: 0px;
-}
-
-#logo {
-    padding-top: 10px;
-    font-size: 25px;
-    padding-bottom: 15px;
+    order: 4;
+    margin-top: 10px;
 }
 
 /* Icons (bomb, phone, email) */
@@ -191,14 +199,19 @@ h3 {
     color: var(--off-white);
 }
 
+#navigation {
+    flex-grow: 1;
+}
+
 #navigation ul {
     display: flex;
 }
 
 #navigation li {
     list-style-type: none;
-    padding: 5px 15px;
-    font-size: 13pt;
+    padding: 5px 15px; /* Per assignment, though it looks more like 10px 15px on video  */
+    font-size: 13px;
+    text-transform: uppercase;
     letter-spacing: .05em;
     border: 1px solid transparent;
     transition: all var(--animation-length) linear;
