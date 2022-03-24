@@ -82,18 +82,19 @@ body {
     min-width: 768px; /* Minimal site width */
 }
 
-/* Selection highlight */
+/* 
+    Selection highlight 
+    Possibly not part of the excercise, but it was in the video
+*/
 *::selection {
     background: #a0a554;
   }
 
 section {
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 60px;
-    padding-bottom: 80px;
+    padding: 60px 20px 80px 20px;
 }
 
+/* Width >1200px gets centered */
 .content {
     max-width: 1200px;
     margin: auto;
@@ -127,7 +128,7 @@ h3 {
 #header .content {
     height: 100%;
     display: grid;
-    grid-template-rows: 1fr 2fr;
+    grid-template-rows: 1fr 2fr; /* "hlavní nadpis spolu s tlačítkem umístěn v 2/3 záhlaví" */
     padding-left: 20px;
     padding-right: 20px;
 }
@@ -138,7 +139,7 @@ h3 {
     flex-wrap: wrap;
     align-content: flex-start;
     margin-top: 10px;
-    row-gap: 10px;
+    row-gap: 15px;
 }
 
 #logo {
@@ -174,6 +175,11 @@ h3 {
     margin-top: 10px;
 }
 
+/* pad between socials*/
+#networks > span {
+    margin-left: 5px;
+}
+
 /* Icons (bomb, phone, email) */
 .fas {
     color: var(--blue);
@@ -181,7 +187,7 @@ h3 {
 
 .fab {
     color: var(--blue);
-    font-size: 20pt;
+    font-size: 18pt;
     letter-spacing: .15em;
 }
 
@@ -209,15 +215,18 @@ h3 {
 
 #navigation li {
     list-style-type: none;
-    padding: 5px 15px; /* Per assignment, though it looks more like 10px 15px on video  */
+}
+
+#navigation a {
+    padding: 10px 15px; /* Per assignment 5px 15px, though it looks more like 10px 15px on video */
+    border: 1px solid transparent;
+    letter-spacing: .05em;
     font-size: 13px;
     text-transform: uppercase;
-    letter-spacing: .05em;
-    border: 1px solid transparent;
     transition: all var(--animation-length) linear;
 }
 
-#navigation li:hover {
+#navigation a:hover {
     border-color: var(--off-white);
 }
 
@@ -255,7 +264,7 @@ h3 {
 }
 
 #get-started:hover {
-    border-color: var(--white);
+    border-color: var(--blue);
     color: var(--white);
     background-color: var(--blue);
 }
@@ -396,12 +405,12 @@ h3 {
 #team .content {
     display: flex;
     flex: 1;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Wrap to make heading appear above team members*/
     gap: 20px;
 }
 
 #team h2 {
-    flex-basis: 100%;
+    flex-basis: 100%; /* Takes first row */
     font-size: var(--font-size-h2-1);
     font-weight: bold;
     text-transform: uppercase;
@@ -412,12 +421,10 @@ h3 {
 .team-card {
     flex-grow: 1;
     flex-basis: 0;
-
     border-radius: var(--rounded-radius);
     box-shadow: rgba(99, 99, 99, 0.2) 0px 0px var(--shadow-size);
-    overflow: hidden;
+    overflow: hidden; /* round images | alternative: round top of images as well as .team-card */
     text-align: center;
-
     padding-bottom: 20px;
 }
 
@@ -429,7 +436,6 @@ h3 {
 .team-card:hover {
     box-shadow: var(--blue) 0px 0px var(--shadow-size);
 }
-
 
 .team-card:hover h3 {
     color: var(--blue);
@@ -455,35 +461,41 @@ h3 {
 #stats .content {
     display: flex;
     padding: 0px 20px;
-    flex: 1;
     gap: 20px;
     justify-content: space-between;
 }
 
 .stats-card {
-    flex-grow: 1;
-    flex-basis: 0;
+    flex: 1; /* Grow/shrink to available space */
+    box-sizing: border-box; /* Count padding as part of 300px width budget */
     max-width: 300px;
     background-color: var(--dark-gray);
     color: var(--white);
     border-radius: var(--rounded-radius);
     text-align: center;
     padding: 10px;
-    padding-top: calc(16px + 10px + 20px);
+    /* Positioning of the icon */
     position: relative;
+    padding-top: calc(16px + 10px + 10px); /* half of icon + white circle + padding from text */
+}
+
+.stats-card:hover {
+    background-color: var(--blue);
 }
 
 .stats-card p {
     color: var(--light-gray);
     font-size: var(--font-size-1);
+    margin-top: 10px;
 }
 
 .stats-card i {
     background-color: var(--white);
-    padding: 10px;
     border-radius: 100%;
     color: var(--blue);
     font-size: 32px;
+    padding: 10px;
+    /* position */
     position: absolute;
     top: calc((32px + 20px) / -2);
     left: calc(50% - 16px - 10px);
@@ -498,8 +510,12 @@ h3 {
 #price table {
     width: 80%;
     margin: auto;
-    border-spacing: 0px 20px;
+    border-spacing: 0px 20px; /* Space between rows */
     text-align: left;
+}
+
+#price thead tr {
+    color: black;
 }
 
 #price h2 {
@@ -529,25 +545,25 @@ h3 {
 }
 
 #price ul {
-    list-style-position: inside;
+    list-style-position: inside; /* Position of li ::marker*/
 }
 
-#price td li {
+#price li {
     padding-bottom: 5px;
 }
 
-#price td li:first-child {
+#price li:first-child {
     list-style-type: none;
     font-weight: bold;
 }
 
-#price td li:not(:first-child) {
+#price li:not(:first-child) {
     padding-left: 2px;
 }
 
 #price button {
     font-weight: 400;
-    background-color: inherit;
+    background-color: inherit; /* Override default gray */
     padding: 20px;
     border: 1px solid var(--blue);
     border-radius: var(--rounded-radius);
@@ -593,7 +609,7 @@ h3 {
 }
 
 .refs-card blockquote span::before {
-    content: "\"";
+    content: "\""; /* quote mark */
     font-style: italic;
     font-size: 100px;
     color: var(--blue);
@@ -636,13 +652,13 @@ h3 {
     display: flex;
     justify-items: normal;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 }
 
 .refs-card h3 {
     color: var(--gray);
     font-weight: normal;
-    font-size: var(--font-size-1);
+    font-size: 16px; /* match image */
 }
 
 .refs-card img {
@@ -660,6 +676,7 @@ h3 {
 #contact .content {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    text-align: center;
     grid-template-areas: 
     "head head"
     "map form"
