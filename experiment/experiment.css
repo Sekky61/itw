@@ -1,0 +1,17 @@
+#page { color:red; font-weight: normal; width:900px; }
+#page .posledni { color:green; }
+p span { margin: 10px; border: 1px solid black; }
+#main { font-style: italic; }
+
+#page p.posledni {
+    color: black;
+  }
+
+  #page span {
+      width: calc(300px - 25px);
+      display: inline-block;
+  }
+
+  p span:first-child {
+      font-weight: bold;
+  }
