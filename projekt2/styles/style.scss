@@ -1,0 +1,15 @@
+/*
+    style.css
+    Michal Majer
+    xmajer21
+*/
+
+@use 'reset';
+@use 'layout';
+@use 'header';
+
+// sass --watch styles/style.scss style.css
+
+section {
+    border-bottom: 1px solid white;
+}
