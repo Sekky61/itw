@@ -1,7 +1,29 @@
-
 header {
+
+    margin: 1.5em;
+
     h1 {
         font-weight: 100;
-        font-size: 3em;
+        font-size: 4em;
+    }
+
+    h2 {
+        margin-top: 0.3em;
+        margin-left: 0.3em;
+    }
+}
+
+nav {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+
+    font-size: 1.2em;
+
+    a {
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }
