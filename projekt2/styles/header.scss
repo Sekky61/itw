@@ -18,6 +18,13 @@ nav {
     display: flex;
     flex-direction: column;
     gap: 1.5em;
+    max-width: 10em;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+
+    * {
+        transition: inherit; // not inhereted by default
+    }
 
     font-size: 1.2em;
 
@@ -25,5 +32,17 @@ nav {
         &:hover {
             text-decoration: underline;
         }
+
+        padding: 0px;
+        background-color: transparent;
+        border-radius: 3px;
+        color: inherit;
     }
+}
+
+.active {
+    padding: 10px;
+    background-color: white;
+    border-radius: 3px;
+    color: black;
 }

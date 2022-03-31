@@ -16,6 +16,8 @@ body {
 main {
     border-left: 1px solid white;
     overflow-y: scroll;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 section {
@@ -31,10 +33,12 @@ section {
     height: 100%;
 }
 
+$frame-color: #111;
+
 .frame-top {
     width: 100%;
     height: $border-thickness;
-    background-color: #111;
+    background-color: $frame-color;
 }
 
 .frame-left {
@@ -42,5 +46,5 @@ section {
     width: $border-thickness;
     top: 0;
     height: 100%;
-    background-color: black;
+    background-color: $frame-color;
 }
