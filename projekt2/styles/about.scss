@@ -1,0 +1,82 @@
+$social-width: 80px;
+
+#about {
+    display: flex;
+    flex-direction: column;
+
+    .rectangle-container {
+        flex-grow: 1;
+        position: relative;
+    }
+}
+
+
+@mixin white-border($thickness) {
+    border-width: $thickness;
+    border-color: white;
+    border-style: solid;
+}
+
+.info-rect {
+    @include white-border(30px);
+
+    display: inline-block;
+    padding: 20px;
+
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    right: 50%;
+    top: 50%;
+}
+
+.picture-rect {
+    @include white-border(30px);
+
+    display: inline-block;
+    padding: 20px;
+
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    left: 40%;
+    top: 10%;
+}
+
+.socials-container {
+    display: flex;
+    gap: 40px;
+}
+
+.social {
+    background-color: white;
+    width: $social-width;
+    height: $social-width;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#social-github {
+    position: absolute;
+    right: calc(60% + 60px + 2 * $social-width);
+    bottom: calc(50% + 20px);
+}
+
+#social-linkedin {
+    position: absolute;
+    right: calc(60% + 20px);
+    bottom: calc(50% + 20px);
+}
+
+#social-twitter {
+    position: absolute;
+    right: calc(60% + 40px + $social-width);
+    bottom: calc(50% + 20px);
+}
+
+.social * {
+    width: 50px;
+    height: 50px;
+}
