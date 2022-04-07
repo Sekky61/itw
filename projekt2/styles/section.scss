@@ -1,9 +1,12 @@
-$off-white: #eee;
+@use 'vars';
 
 section {
-    border-bottom: 1px solid $off-white;
+    border-bottom: 1px solid vars.$off-white;
     min-height: 100vh;
     scroll-margin-top: 4rem;
+
+    max-width: 1200px;
+    margin: auto; // todo center it better
 
     >h2 {
         font-size: 3em;
@@ -18,7 +21,7 @@ section {
     margin-left: 4em;
 
     li {
-        border-left: 1px solid $off-white;
+        border-left: 1px solid vars.$off-white;
 
         padding: {
             left: 2em;
@@ -43,7 +46,7 @@ section {
             content: "";
             width: 14px;
             height: 14px;
-            background-color: $off-white;
+            background-color: vars.$off-white;
             border-radius: 100%;
             position: absolute;
             top: 25%;

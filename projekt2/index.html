@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,53 +18,41 @@
 <body>
   <div class="frame-top"></div>
 
+  <header>
+    <nav>
+      <div>
+        <a href="#" id="home_link">Home</a>
+      </div>
+      <div>
+        <a href="#about" id="about_link">Základní informace</a>
+      </div>
+      <div>
+        <a href="#education" id="education_link">Vzdělání</a>
+      </div>
+      <div>
+        <a href="#projects" id="projects_link">Projekty</a>
+      </div>
+      <div>
+        <a href="#contacts" id="contacts_link">Kontakty</a>
+      </div>
+    </nav>
+  </header>
+
+  <h1 id="name">Rex Buckingham</h1>
+  <!-- <h2>Programátor</h2> -->
+
   <!-- frame -->
   <div class="main-columns">
     <div class="left-border"></div>
-    <div>
-      <!-- header sticks inside this div -->
-      <header>
-        <h1>Rex Buckingham</h1>
-        <!-- <h2>Programátor</h2> -->
-        <nav>
-          <div>
-            <a href="#" id="home_link">Home</a>
-          </div>
-          <div>
-            <a href="#about" id="about_link">Základní informace</a>
-          </div>
-          <div>
-            <a href="#education" id="education_link">Vzdělání</a>
-          </div>
-          <div>
-            <a href="#projects" id="projects_link">Projekty</a>
-          </div>
-          <div>
-            <a href="#contacts" id="contacts_link">Kontakty</a>
-          </div>
-        </nav>
-      </header>
-    </div>
-
     <main>
       <section id="about">
         <div class="rectangle-container">
           <div class="name-rect">
             <h2>Rex Buckingham</h2>
-            <h3>Kouč, konzultant, programátor</h3>
+            <h3>Konzultant, programátor</h3>
           </div>
           <div class="picture-rect">
           </div>
-          <div class="info-rect">
-            <h3>Kontakt</h3>
-            <ul>
-              <li><a href="mailto:business.rex@vut.cz">business.rex@vut.cz</a></li>
-              <li>100 Charming Avenue</li>
-              <li>New York</li>
-              <li>+1 202-918-2132</li>
-            </ul>
-          </div>
-          d
           <div class="socials-container">
             <a href="https://github.com/">
               <div id="social-github" class="social">
@@ -81,6 +69,15 @@
                 <img src="assets/twitter.svg" alt="twitter">
               </div>
             </a>
+          </div>
+          <div class="info-rect">
+            <h3>Kontakt</h3>
+            <ul>
+              <li><a href="mailto:business.rex@vut.cz">business.rex@vut.cz</a></li>
+              <li>100 Charming Avenue</li>
+              <li>New York</li>
+              <li>+1 202-918-2132</li>
+            </ul>
           </div>
         </div>
       </section>

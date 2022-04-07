@@ -1,15 +1,23 @@
-$border-thickness: 30px;
+@use 'vars';
+
+#name {
+    font-weight: 100;
+    font-size: 4em;
+
+    position: absolute;
+    top: vars.$border-thickness;
+    left: vars.$border-thickness;
+    margin-top: 0.2em;
+    margin-left: 0.3em;
+}
 
 header {
-    position: sticky;
-    top: $border-thickness;
-    padding-left: 1.8em;
-    padding-top: 1.3em;
+    display: block;
+    position: fixed;
+    z-index: 2;
 
-    h1 {
-        font-weight: 100;
-        font-size: 4em;
-    }
+    top: vars.$border-thickness;
+    left: vars.$border-thickness;
 
     h2 {
         margin-top: 0.3em;
@@ -17,12 +25,19 @@ header {
     }
 }
 
+@include vars.breakpoint(mobileonly) {
+    header {
+        display: none;
+    }
+}
+
 nav {
-    margin-top: 2.5em;
+    margin-top: vars.$nav-top-padding;
+    margin-left: 0.6em;
+
     display: flex;
     flex-direction: column;
     gap: 1.5em;
-    max-width: 10em;
     box-sizing: border-box;
     transition: all 0.3s ease-in-out;
 

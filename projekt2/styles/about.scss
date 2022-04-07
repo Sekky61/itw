@@ -1,5 +1,4 @@
-$social-width: 80px;
-$social-margin: 27px;
+@use 'vars';
 
 #about {
     display: flex;
@@ -8,6 +7,8 @@ $social-margin: 27px;
     .rectangle-container {
         flex-grow: 1;
         position: relative;
+
+        max-width: 1200px;
     }
 }
 
@@ -33,7 +34,7 @@ $social-margin: 27px;
     position: absolute;
     width: 400px;
     height: 200px;
-    right: 50%;
+    right: min(calc(50% - 40px), calc(100% - 480px));
     top: 47%;
 
     backdrop-filter: blur(10px);
@@ -64,23 +65,30 @@ $social-margin: 27px;
     position: absolute;
     width: 390px;
     height: 390px;
-    right: 10%;
+    left: min(calc(50% - 40px), calc(100% - 430px));
     top: 10%;
 }
 
 .socials-container {
     display: flex;
-    gap: $social-margin;
+    flex-direction: column;
+    gap: vars.$social-margin;
 
     position: absolute;
-    right: calc(10% + 390px + 2*20px + $social-margin);
-    bottom: calc(53% + $social-margin);
+    right: calc(50% + 40px + vars.$social-margin);
+    bottom: calc(53% + vars.$social-margin);
+}
+
+@include vars.breakpoint(laptop) {
+    .socials-container {
+        flex-direction: row;
+    }
 }
 
 .social {
     background-color: white;
-    width: $social-width;
-    height: $social-width;
+    width: vars.$social-width;
+    height: vars.$social-width;
 
     display: flex;
     justify-content: center;

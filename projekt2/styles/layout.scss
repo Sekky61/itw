@@ -1,5 +1,4 @@
-$border-thickness: 25px;
-$frame-color: white;
+@use 'vars';
 
 html {
     scroll-behavior: smooth;
@@ -15,18 +14,37 @@ body {
 
 .main-columns {
     display: grid;
-    grid-template-columns: $border-thickness 1fr 2fr;
+    grid-template-columns: vars.$border-thickness 1fr;
 }
 
 // top and left screen borders
 
 .frame-top {
     position: sticky;
+    z-index: 2;
     top: 0;
-    height: $border-thickness;
-    background-color: $frame-color;
+    height: vars.$border-thickness;
+    background-color: vars.$off-white;
 }
 
 .left-border {
-    background-color: $frame-color;
+    z-index: 2;
+    background-color: vars.$off-white;
+    height: 100%;
+}
+
+@include vars.breakpoint(mobileonly) {
+    .left-border {
+        display: none;
+    }
+}
+
+main {
+    margin-right: 20px;
+}
+
+@include vars.breakpoint(tablet) {
+    main {
+        margin-left: vars.$nav-width;
+    }
 }

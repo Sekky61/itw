@@ -61,41 +61,70 @@ body {
 
 .main-columns {
   display: grid;
-  grid-template-columns: 25px 1fr 2fr;
+  grid-template-columns: 25px 1fr;
 }
 
 .frame-top {
   position: sticky;
+  z-index: 2;
   top: 0;
   height: 25px;
-  background-color: white;
+  background-color: #eee;
 }
 
 .left-border {
-  background-color: white;
+  z-index: 2;
+  background-color: #eee;
+  height: 100%;
+}
+
+@media (max-width: 37.5em) {
+  .left-border {
+    display: none;
+  }
+}
+main {
+  margin-right: 20px;
+}
+
+@media (min-width: 50em) {
+  main {
+    margin-left: 240px;
+  }
+}
+#name {
+  font-weight: 100;
+  font-size: 4em;
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  margin-top: 0.2em;
+  margin-left: 0.3em;
 }
 
 header {
-  position: sticky;
-  top: 30px;
-  padding-left: 1.8em;
-  padding-top: 1.3em;
-}
-header h1 {
-  font-weight: 100;
-  font-size: 4em;
+  display: block;
+  position: fixed;
+  z-index: 2;
+  top: 25px;
+  left: 25px;
 }
 header h2 {
   margin-top: 0.3em;
   margin-left: 0.5em;
 }
 
+@media (max-width: 37.5em) {
+  header {
+    display: none;
+  }
+}
 nav {
-  margin-top: 2.5em;
+  margin-top: 100px;
+  margin-left: 0.6em;
   display: flex;
   flex-direction: column;
   gap: 1.5em;
-  max-width: 10em;
   box-sizing: border-box;
   transition: all 0.3s ease-in-out;
   font-size: 1.2em;
@@ -124,6 +153,8 @@ section {
   border-bottom: 1px solid #eee;
   min-height: 100vh;
   scroll-margin-top: 4rem;
+  max-width: 1200px;
+  margin: auto;
 }
 section > h2 {
   font-size: 3em;
@@ -169,6 +200,7 @@ section > h2 {
 #about .rectangle-container {
   flex-grow: 1;
   position: relative;
+  max-width: 1200px;
 }
 
 .name-rect {
@@ -186,7 +218,7 @@ section > h2 {
   position: absolute;
   width: 400px;
   height: 200px;
-  right: 50%;
+  right: min(50% - 40px, 100% - 480px);
   top: 47%;
   backdrop-filter: blur(10px);
 }
@@ -212,18 +244,24 @@ section > h2 {
   position: absolute;
   width: 390px;
   height: 390px;
-  right: 10%;
+  left: min(50% - 40px, 100% - 430px);
   top: 10%;
 }
 
 .socials-container {
   display: flex;
+  flex-direction: column;
   gap: 27px;
   position: absolute;
-  right: calc(10% + 390px + 40px + 27px);
+  right: calc(50% + 40px + 27px);
   bottom: calc(53% + 27px);
 }
 
+@media (min-width: 64em) {
+  .socials-container {
+    flex-direction: row;
+  }
+}
 .social {
   background-color: white;
   width: 80px;
