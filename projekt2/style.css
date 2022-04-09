@@ -149,14 +149,14 @@ nav a:hover {
   color: black;
 }
 
-section {
+main > section {
   border-bottom: 1px solid #eee;
   min-height: 100vh;
   scroll-margin-top: 4rem;
   max-width: 1200px;
   margin: auto;
 }
-section > h2 {
+main > section > h2 {
   font-size: 3em;
   padding-top: 0.3em;
   padding-left: 0.3em;

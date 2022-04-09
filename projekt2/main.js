@@ -3,10 +3,10 @@ console.log("Script runs");
 let scroll_area = document.querySelector("#scroll_area");
 
 let button_map = {
-    "about": "#about_link", "education": "#education_link", "projects": "#projects_link", "contacts": "#contacts_link"
+    "about": "#about_link", "education": "#education_link", "projects": "#projects_link", "skills": "#skills_link", "contacts": "#contacts_link"
 }
 
-let scroll_items = ["#about", "#education", "#projects", "#contacts"];
+let scroll_items = ["#about", "#education", "#projects", "#skills", "#contacts"];
 let scroll_elements = scroll_items.map((selector) => document.querySelector(selector));
 
 console.log(scroll_elements);
