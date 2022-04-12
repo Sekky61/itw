@@ -21,14 +21,14 @@ body {
 
 .frame-top {
     position: sticky;
-    z-index: 2;
+    z-index: 3;
     top: 0;
     height: vars.$border-thickness;
     background-color: vars.$off-white;
 }
 
 .left-border {
-    z-index: 2;
+    z-index: 3;
     background-color: vars.$off-white;
     height: 100%;
 }
