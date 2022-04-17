@@ -8,6 +8,9 @@
 @use 'layout';
 @use 'header';
 @use 'section';
+
 @use 'about';
+@use 'projects';
+@use 'skills';
 
 // sass --watch styles/style.scss style.css

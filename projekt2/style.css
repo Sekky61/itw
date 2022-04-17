@@ -193,26 +193,87 @@ main > section > h2 {
   left: -7px;
 }
 
-#skills .skills-container {
+#about {
   display: flex;
-  gap: 0.5em 1.4em;
-  margin-bottom: 5em;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
-#skills h3 {
-  font-size: 1.7em;
-  margin-bottom: 0.6em;
+#about .rectangle-container {
+  flex-grow: 1;
+  position: relative;
+  max-width: 1200px;
 }
 
-.skills-container * {
-  border-color: #eee;
+.name-rect {
+  position: absolute;
+  bottom: 10%;
+  left: 20%;
+}
+
+.info-rect {
+  border-width: 20px;
+  border-color: white;
   border-style: solid;
-  border-width: 0.5em;
-  width: 6em;
-  height: 6em;
+  display: inline-block;
+  padding: 20px;
+  position: absolute;
+  width: 400px;
+  height: 200px;
+  right: min(50% - 40px, 100% - 480px);
+  top: 47%;
+  backdrop-filter: blur(10px);
+}
+.info-rect h3 {
+  font-weight: 100;
+  font-size: 2.4em;
+  margin-bottom: 0.2em;
+}
+.info-rect ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+  font-size: 1.2em;
+}
+
+.picture-rect {
+  border-width: 20px;
+  border-color: white;
+  border-style: solid;
+  background-image: url(assets/headshot.jpg);
+  background-size: cover;
+  display: inline-block;
+  position: absolute;
+  width: 390px;
+  height: 390px;
+  left: min(50% - 40px, 100% - 430px);
+  top: 10%;
+}
+
+.socials-container {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  position: absolute;
+  right: calc(50% + 40px + 27px);
+  bottom: calc(53% + 27px);
+}
+
+@media (min-width: 64em) {
+  .socials-container {
+    flex-direction: row;
+  }
+}
+.social {
+  background-color: white;
+  width: 80px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.social * {
+  width: 50px;
+  height: 50px;
 }
 
 #projects {
@@ -359,87 +420,55 @@ main > section > h2 {
   background-color: white;
 }
 
-#about {
+#skills .skills-container {
   display: flex;
-  flex-direction: column;
+  gap: 0.5em 1.4em;
+  margin-bottom: 5em;
+  flex-wrap: wrap;
 }
-#about .rectangle-container {
-  flex-grow: 1;
+#skills .skills-container > div {
+  border-color: #eee;
+  border-style: solid;
+  border-width: 0.5em;
+  width: 6em;
+  height: 6em;
   position: relative;
-  max-width: 1200px;
+  overflow: hidden;
+  padding-top: 1em;
+  text-align: center;
+  transition: transform 300ms;
 }
-
-.name-rect {
+#skills .skills-container > div:hover span {
+  transform: rotate(0deg);
+}
+#skills .skills-container > div:hover i {
+  transform: rotate(180deg);
+}
+#skills .skills-container > div .no-icon {
+  font-size: 1.5em;
+  font-style: normal;
+}
+#skills .skills-container > div span {
+  display: block;
   position: absolute;
-  bottom: 10%;
-  left: 20%;
+  width: 6em;
+  height: 6em;
+  top: 0;
+  transition: inherit;
+  transform-origin: 50% 100%;
+  transform: rotate(180deg);
 }
-
-.info-rect {
-  border-width: 20px;
-  border-color: white;
-  border-style: solid;
-  display: inline-block;
-  padding: 20px;
-  position: absolute;
-  width: 400px;
-  height: 200px;
-  right: min(50% - 40px, 100% - 480px);
-  top: 47%;
-  backdrop-filter: blur(10px);
+#skills .skills-container > div i {
+  display: block;
+  height: 100%;
+  width: 100%;
+  font-size: 4em;
+  transform-origin: 50% 100%;
+  transition: inherit;
 }
-.info-rect h3 {
-  font-weight: 100;
-  font-size: 2.4em;
-  margin-bottom: 0.2em;
-}
-.info-rect ul {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3em;
-  font-size: 1.2em;
-}
-
-.picture-rect {
-  border-width: 20px;
-  border-color: white;
-  border-style: solid;
-  background-image: url(assets/headshot.jpg);
-  background-size: cover;
-  display: inline-block;
-  position: absolute;
-  width: 390px;
-  height: 390px;
-  left: min(50% - 40px, 100% - 430px);
-  top: 10%;
-}
-
-.socials-container {
-  display: flex;
-  flex-direction: column;
-  gap: 27px;
-  position: absolute;
-  right: calc(50% + 40px + 27px);
-  bottom: calc(53% + 27px);
-}
-
-@media (min-width: 64em) {
-  .socials-container {
-    flex-direction: row;
-  }
-}
-.social {
-  background-color: white;
-  width: 80px;
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.social * {
-  width: 50px;
-  height: 50px;
+#skills h3 {
+  font-size: 1.7em;
+  margin-bottom: 0.6em;
 }
 
 /*
