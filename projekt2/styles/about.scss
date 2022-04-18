@@ -13,9 +13,9 @@
 }
 
 
-@mixin white-border($thickness) {
+@mixin color-border($thickness) {
     border-width: $thickness;
-    border-color: white;
+    border-color: vars.$main-color;
     border-style: solid;
 }
 
@@ -26,7 +26,7 @@
 }
 
 .info-rect {
-    @include white-border(20px);
+    @include color-border(20px);
 
     display: inline-block;
     padding: 20px;
@@ -55,7 +55,7 @@
 }
 
 .picture-rect {
-    @include white-border(20px);
+    @include color-border(20px);
 
     background-image: url(assets/headshot.jpg); // todo move to html
     background-size: cover;
@@ -73,29 +73,28 @@
     display: flex;
     flex-direction: column;
     gap: vars.$social-margin;
+    flex-direction: row;
 
     position: absolute;
     right: calc(50% + 40px + vars.$social-margin);
     bottom: calc(53% + vars.$social-margin);
 }
 
-@include vars.breakpoint(laptop) {
+@include vars.breakpoint(desktop) {
     .socials-container {
-        flex-direction: row;
+        flex-direction: column;
     }
 }
 
 .social {
-    background-color: white;
+    background-color: vars.$main-color;
+    color: white;
     width: vars.$social-width;
     height: vars.$social-width;
 
     display: flex;
     justify-content: center;
     align-items: center;
-}
 
-.social * {
-    width: 50px;
-    height: 50px;
+    font-size: 40px;
 }

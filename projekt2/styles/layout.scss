@@ -6,12 +6,12 @@ html {
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #222;
-    color: aliceblue;
+    background-color: vars.$off-white;
+    color: black;
 }
 
-// division into 2 (3) columns
 
+// 2 columns, left color border and main
 .main-columns {
     display: grid;
     grid-template-columns: vars.$border-thickness 1fr;
@@ -21,21 +21,22 @@ body {
 
 .frame-top {
     position: sticky;
-    z-index: 3;
+    z-index: 4;
     top: 0;
     height: vars.$border-thickness;
-    background-color: vars.$off-white;
+    background-color: vars.$main-color;
 }
 
 .left-border {
-    z-index: 3;
-    background-color: vars.$off-white;
+    z-index: 4;
+    background-color: vars.$main-color;
     height: 100%;
+    display: none;
 }
 
-@include vars.breakpoint(mobileonly) {
+@include vars.breakpoint(desktop) {
     .left-border {
-        display: none;
+        display: block;
     }
 }
 
@@ -43,7 +44,7 @@ main {
     margin-right: 20px;
 }
 
-@include vars.breakpoint(tablet) {
+@include vars.breakpoint(desktop) {
     main {
         margin-left: vars.$nav-width;
     }

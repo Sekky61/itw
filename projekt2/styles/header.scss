@@ -13,7 +13,7 @@
 }
 
 header {
-    display: block;
+    display: none;
     position: fixed;
     z-index: 2;
 
@@ -26,27 +26,25 @@ header {
     }
 }
 
-@include vars.breakpoint(mobileonly) {
+@include vars.breakpoint(desktop) {
     header {
-        display: none;
+        display: block;
     }
 }
 
 nav {
     margin-top: vars.$nav-top-padding;
-    margin-left: 0.6em;
+    margin-left: 0.8em;
+    font-size: 1.2em;
 
     display: flex;
     flex-direction: column;
     gap: 1.5em;
     box-sizing: border-box;
-    transition: all 0.3s ease-in-out;
 
     * {
-        transition: inherit; // not inhereted by default
+        transition: all 0.25s cubic-bezier(0.65, 0.05, 0.36, 1);
     }
-
-    font-size: 1.2em;
 
     a {
         &:hover {
@@ -63,6 +61,6 @@ nav {
 .active {
     padding: 10px;
     background-color: white;
-    border-radius: 3px;
+    border-radius: 4px;
     color: black;
 }
