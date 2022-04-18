@@ -7,10 +7,9 @@ let button_map = {
     "education": "#education_link",
     "projects": "#projects_link",
     "skills": "#skills_link",
-    "contacts": "#contacts_link"
 }
 
-let scroll_items = ["#about", "#education", "#projects", "#skills", "#contacts"];
+let scroll_items = ["#about", "#education", "#projects", "#skills"];
 let scroll_elements = scroll_items.map((selector) => document.querySelector(selector));
 
 let options = {
@@ -63,9 +62,7 @@ function projects_scroll_callback() {
         scrolled = Math.min(scrolled, 100);
     }
     document.getElementById(PROJECTS_BAR_ID).style.width = scrolled + "%";
-    console.log("v")
     PROJECT_TIMELINE_DOTS_IDS.forEach(dot => {
-        console.log(scrolled, dot.pos);
         if (scrolled >= dot.pos) {
             dot.el.classList.add("active-dot");
         } else {
