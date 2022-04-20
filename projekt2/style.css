@@ -60,18 +60,49 @@ body {
 }
 
 .main-columns {
-  display: grid;
-  grid-template-columns: 25px 1fr;
+  display: block;
+  margin-left: 20px;
 }
 
+@media (min-width: 70em) {
+  .main-columns {
+    display: grid;
+    grid-template-columns: 25px 1fr;
+    margin-left: 0px;
+  }
+}
 .frame-top {
   position: sticky;
   z-index: 4;
   top: 0;
-  height: 25px;
   background-color: #3ddc84;
+  height: 50px;
+  display: flex;
+  justify-content: end;
 }
 
+@media (min-width: 70em) {
+  .frame-top {
+    height: 25px;
+  }
+}
+#hamburger {
+  width: 50px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#hamburger svg {
+  height: 80%;
+  width: 80%;
+}
+
+@media (min-width: 70em) {
+  #hamburger {
+    display: none;
+  }
+}
 .left-border {
   z-index: 4;
   background-color: #3ddc84;
@@ -94,16 +125,30 @@ main {
   }
 }
 #name {
-  z-index: 3;
+  z-index: 5;
   font-weight: 100;
   font-size: 4em;
-  position: absolute;
-  top: 25px;
-  left: 25px;
-  margin-top: 0.2em;
-  margin-left: 0.3em;
+  position: fixed;
+  display: block;
+  font-size: 32px;
+  top: 0;
+  left: 5px;
+  display: flex;
+  align-items: center;
+  height: 50px;
 }
 
+@media (min-width: 70em) {
+  #name {
+    z-index: 3;
+    font-size: 4em;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    margin-top: 0.2em;
+    margin-left: 0.3em;
+  }
+}
 header {
   display: none;
   position: fixed;
@@ -164,21 +209,26 @@ main > section > h2 {
 }
 
 .edu-timeline {
-  margin-left: 4em;
+  margin-left: 6.5em;
+  padding-top: 2em;
+  padding-bottom: 8em;
+  border-left: 2px solid #3ddc84;
 }
 .edu-timeline li {
-  border-left: 2px solid #3ddc84;
   padding-left: 2em;
   padding-top: 4em;
-  padding-bottom: 5em;
+  padding-bottom: 4em;
   position: relative;
 }
 .edu-timeline li h2 {
   font-size: 22pt;
+  margin-bottom: 0.1em;
 }
 .edu-timeline li .timespan {
   position: absolute;
-  top: calc(4em + 15px);
+  font-size: 16px;
+  line-height: 20px;
+  top: calc(50% - 10px);
   right: calc(100% + 7px + 0.6em);
   white-space: nowrap;
 }
@@ -189,8 +239,8 @@ main > section > h2 {
   background-color: #3ddc84;
   border-radius: 100%;
   position: absolute;
-  top: calc(4em + 15px);
-  left: -7px;
+  top: calc(50% - 7px);
+  left: -8px;
 }
 
 #about {
@@ -213,6 +263,7 @@ main > section > h2 {
   border-width: 20px;
   border-color: #3ddc84;
   border-style: solid;
+  font-size: 1.1em;
   display: inline-block;
   padding: 20px;
   position: absolute;
@@ -307,7 +358,6 @@ main > section > h2 {
 #projects-timeline-bar {
   position: sticky;
   background-color: #ececec;
-  margin-top: -120px;
   top: 0;
   height: 10px;
   padding-top: 120px;

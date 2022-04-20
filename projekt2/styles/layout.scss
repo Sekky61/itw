@@ -13,8 +13,16 @@ body {
 
 // 2 columns, left color border and main
 .main-columns {
-    display: grid;
-    grid-template-columns: vars.$border-thickness 1fr;
+    display: block;
+    margin-left: 20px;
+}
+
+@include vars.breakpoint(desktop) {
+    .main-columns {
+        display: grid;
+        grid-template-columns: vars.$border-thickness 1fr;
+        margin-left: 0px;
+    }
 }
 
 // top and left screen borders
@@ -23,8 +31,38 @@ body {
     position: sticky;
     z-index: 4;
     top: 0;
-    height: vars.$border-thickness;
     background-color: vars.$main-color;
+
+    height: vars.$mobile-border-thickness;
+
+    display: flex;
+    justify-content: end;
+}
+
+@include vars.breakpoint(desktop) {
+    .frame-top {
+        height: vars.$border-thickness;
+    }
+}
+
+#hamburger {
+    width: vars.$mobile-border-thickness;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+        height: 80%;
+        width: 80%;
+    }
+}
+
+@include vars.breakpoint(desktop) {
+    #hamburger {
+        display: none;
+    }
 }
 
 .left-border {

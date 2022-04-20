@@ -28,6 +28,8 @@
 .info-rect {
     @include color-border(20px);
 
+    font-size: 1.1em;
+
     display: inline-block;
     padding: 20px;
 

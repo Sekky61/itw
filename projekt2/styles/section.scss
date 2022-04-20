@@ -17,26 +17,32 @@ main>section {
 
 .edu-timeline {
 
-    margin-left: 4em;
+    margin-left: 6.5em;
+    padding-top: 2em;
+    padding-bottom: 8em;
+    border-left: 2px solid vars.$main-color;
 
     li {
-        border-left: 2px solid vars.$main-color;
+
 
         padding: {
             left: 2em;
             top: 4em;
-            bottom: 5em;
+            bottom: 4em;
         }
 
         position: relative;
 
         h2 {
             font-size: 22pt;
+            margin-bottom: 0.1em;
         }
 
         .timespan {
             position: absolute;
-            top: calc(4em + 15px);
+            font-size: 16px;
+            line-height: 20px;
+            top: calc(50% - 20px / 2);
             right: calc(100% + 7px + 0.6em);
             white-space: nowrap;
         }
@@ -48,8 +54,8 @@ main>section {
             background-color: vars.$main-color;
             border-radius: 100%;
             position: absolute;
-            top: calc(4em + 15px);
-            left: -7px;
+            top: calc(50% - 7px);
+            left: -8px;
         }
     }
 }
