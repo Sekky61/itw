@@ -73,10 +73,9 @@ body {
 }
 .frame-top {
   position: sticky;
-  z-index: 4;
-  top: 0;
   background-color: #3ddc84;
   height: 50px;
+  width: 100vw;
   display: flex;
   justify-content: end;
 }
@@ -145,46 +144,40 @@ main {
     position: absolute;
     top: 25px;
     left: 25px;
-    margin-top: 0.2em;
+    margin-top: 0.35em;
     margin-left: 0.3em;
   }
 }
 header {
-  display: none;
+  z-index: 5;
   position: fixed;
-  z-index: 2;
-  top: 25px;
-  left: 25px;
-}
-header h2 {
-  margin-top: 0.3em;
-  margin-left: 0.5em;
+  top: 0;
 }
 
-@media (min-width: 70em) {
-  header {
-    display: block;
-  }
-}
 nav {
+  display: block;
+  z-index: 2;
+  height: 0;
+  overflow: hidden;
   margin-top: 100px;
   margin-left: 0.8em;
   font-size: 1.2em;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5em;
   box-sizing: border-box;
-}
-nav * {
   transition: all 0.25s cubic-bezier(0.65, 0.05, 0.36, 1);
 }
-nav a {
+nav * {
+  transition: inherit;
+}
+nav li {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  box-sizing: border-box;
   padding: 0px;
   background-color: transparent;
   border-radius: 3px;
   color: inherit;
 }
-nav a:hover {
+nav li:hover {
   text-decoration: underline;
 }
 
@@ -195,6 +188,29 @@ nav a:hover {
   color: black;
 }
 
+#menu-toggle {
+  display: none;
+}
+
+#menu-toggle:checked ~ nav {
+  background: #3ddc84;
+  display: block;
+  margin: 0;
+  padding-left: 0.8em;
+  height: auto;
+}
+
+@media (min-width: 70em) {
+  #header #nav {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    height: auto;
+    background-color: transparent;
+    margin-top: 100px;
+    margin-left: 0.8em;
+  }
+}
 main > section {
   min-height: 100vh;
   scroll-margin-top: 4rem;

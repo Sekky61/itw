@@ -29,11 +29,10 @@ body {
 
 .frame-top {
     position: sticky;
-    z-index: 4;
-    top: 0;
     background-color: vars.$main-color;
 
     height: vars.$mobile-border-thickness;
+    width: 100vw;
 
     display: flex;
     justify-content: end;
