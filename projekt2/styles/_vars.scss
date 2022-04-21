@@ -9,13 +9,22 @@ $nav-top-padding: 100px;
 $social-width: 80px;
 $social-margin: 27px;
 
-$off-white: #ececec;
-$main-color: #3ddc84;
+:root {
+    --background-color: #ecf8f9;
+    --off-white: #ececec;
+    --main-color: #3ddc84;
+    --accent-color: #e3f9a0;
+    --font-color: #040404;
+}
 
-@mixin breakpoint($point) {
-    @if $point==desktop {
-        @media (min-width: 70em) {
-            @content ;
-        }
+$background-color: var(--background-color);
+$off-white: var(--off-white);
+$main-color: var(--main-color);
+$accent-color: var(--accent-color);
+$font-color: var(--font-color);
+
+@mixin desktop() {
+    @media (min-width: 768px) {
+        @content ;
     }
 }

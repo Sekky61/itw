@@ -4,10 +4,14 @@ html {
     scroll-behavior: smooth;
 }
 
+::selection {
+    background: vars.$accent-color;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: vars.$off-white;
-    color: black;
+    background-color: vars.$background-color;
+    color: vars.$font-color;
 }
 
 
@@ -17,7 +21,7 @@ body {
     margin-left: 20px;
 }
 
-@include vars.breakpoint(desktop) {
+@include vars.desktop {
     .main-columns {
         display: grid;
         grid-template-columns: vars.$border-thickness 1fr;
@@ -38,7 +42,7 @@ body {
     justify-content: end;
 }
 
-@include vars.breakpoint(desktop) {
+@include vars.desktop {
     .frame-top {
         height: vars.$border-thickness;
     }
@@ -58,7 +62,7 @@ body {
     }
 }
 
-@include vars.breakpoint(desktop) {
+@include vars.desktop {
     #hamburger {
         display: none;
     }
@@ -71,7 +75,7 @@ body {
     display: none;
 }
 
-@include vars.breakpoint(desktop) {
+@include vars.desktop {
     .left-border {
         display: block;
     }
@@ -81,7 +85,7 @@ main {
     margin-right: 20px;
 }
 
-@include vars.breakpoint(desktop) {
+@include vars.desktop {
     main {
         margin-left: vars.$nav-width;
     }

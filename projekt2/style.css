@@ -49,14 +49,26 @@ a {
   text-decoration: inherit;
 }
 
+:root {
+  --background-color: #ecf8f9;
+  --off-white: #ececec;
+  --main-color: #3ddc84;
+  --accent-color: #e3f9a0;
+  --font-color: #040404;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
+::selection {
+  background: var(--accent-color);
+}
+
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #ececec;
-  color: black;
+  background-color: var(--background-color);
+  color: var(--font-color);
 }
 
 .main-columns {
@@ -64,7 +76,7 @@ body {
   margin-left: 20px;
 }
 
-@media (min-width: 70em) {
+@media (min-width: 768px) {
   .main-columns {
     display: grid;
     grid-template-columns: 25px 1fr;
@@ -73,14 +85,14 @@ body {
 }
 .frame-top {
   position: sticky;
-  background-color: #3ddc84;
+  background-color: var(--main-color);
   height: 50px;
   width: 100vw;
   display: flex;
   justify-content: end;
 }
 
-@media (min-width: 70em) {
+@media (min-width: 768px) {
   .frame-top {
     height: 25px;
   }
@@ -97,19 +109,19 @@ body {
   width: 80%;
 }
 
-@media (min-width: 70em) {
+@media (min-width: 768px) {
   #hamburger {
     display: none;
   }
 }
 .left-border {
   z-index: 4;
-  background-color: #3ddc84;
+  background-color: var(--main-color);
   height: 100%;
   display: none;
 }
 
-@media (min-width: 70em) {
+@media (min-width: 768px) {
   .left-border {
     display: block;
   }
@@ -118,7 +130,7 @@ main {
   margin-right: 20px;
 }
 
-@media (min-width: 70em) {
+@media (min-width: 768px) {
   main {
     margin-left: 240px;
   }
@@ -137,7 +149,7 @@ main {
   height: 50px;
 }
 
-@media (min-width: 70em) {
+@media (min-width: 768px) {
   #name {
     z-index: 3;
     font-size: 4em;
@@ -163,12 +175,12 @@ nav {
   margin-left: 0.8em;
   font-size: 1.2em;
   box-sizing: border-box;
-  transition: all 0.25s cubic-bezier(0.65, 0.05, 0.36, 1);
 }
 nav * {
   transition: inherit;
 }
 nav li {
+  transition: all 0.25s cubic-bezier(0.65, 0.05, 0.36, 1);
   margin-top: 1em;
   margin-bottom: 1em;
   box-sizing: border-box;
@@ -183,7 +195,7 @@ nav li:hover {
 
 .active {
   padding: 10px;
-  background-color: white;
+  background-color: var(--accent-color);
   border-radius: 4px;
   color: black;
 }
@@ -193,14 +205,14 @@ nav li:hover {
 }
 
 #menu-toggle:checked ~ nav {
-  background: #3ddc84;
+  background: var(--main-color);
   display: block;
   margin: 0;
   padding-left: 0.8em;
   height: auto;
 }
 
-@media (min-width: 70em) {
+@media (min-width: 768px) {
   #header #nav {
     position: fixed;
     top: 25px;
@@ -224,23 +236,24 @@ main > section > h2 {
   padding-bottom: 0.6em;
 }
 
-.edu-timeline {
+#edu-timeline {
+  background-clip: border-box;
   margin-left: 6.5em;
   padding-top: 2em;
   padding-bottom: 8em;
-  border-left: 2px solid #3ddc84;
+  border-left: 2px solid var(--main-color);
 }
-.edu-timeline li {
+#edu-timeline li {
   padding-left: 2em;
   padding-top: 4em;
   padding-bottom: 4em;
   position: relative;
 }
-.edu-timeline li h2 {
+#edu-timeline li h2 {
   font-size: 22pt;
   margin-bottom: 0.1em;
 }
-.edu-timeline li .timespan {
+#edu-timeline li .timespan {
   position: absolute;
   font-size: 16px;
   line-height: 20px;
@@ -248,11 +261,11 @@ main > section > h2 {
   right: calc(100% + 7px + 0.6em);
   white-space: nowrap;
 }
-.edu-timeline li::after {
+#edu-timeline li::after {
   content: "";
   width: 14px;
   height: 14px;
-  background-color: #3ddc84;
+  background-color: var(--main-color);
   border-radius: 100%;
   position: absolute;
   top: calc(50% - 7px);
@@ -277,7 +290,7 @@ main > section > h2 {
 
 .info-rect {
   border-width: 20px;
-  border-color: #3ddc84;
+  border-color: var(--main-color);
   border-style: solid;
   font-size: 1.1em;
   display: inline-block;
@@ -303,7 +316,7 @@ main > section > h2 {
 
 .picture-rect {
   border-width: 20px;
-  border-color: #3ddc84;
+  border-color: var(--main-color);
   border-style: solid;
   background-image: url(assets/headshot.jpg);
   background-size: cover;
@@ -325,20 +338,23 @@ main > section > h2 {
   bottom: calc(53% + 27px);
 }
 
-@media (min-width: 70em) {
+@media (min-width: 768px) {
   .socials-container {
     flex-direction: column;
   }
 }
 .social {
-  background-color: #3ddc84;
-  color: white;
+  background-color: var(--main-color);
+  color: var(--accent-color);
   width: 80px;
   height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 40px;
+}
+.social:hover {
+  color: white;
 }
 
 #projects {
@@ -373,7 +389,7 @@ main > section > h2 {
 
 #projects-timeline-bar {
   position: sticky;
-  background-color: #ececec;
+  background-color: var(--background-color);
   top: 0;
   height: 10px;
   padding-top: 120px;
@@ -381,27 +397,31 @@ main > section > h2 {
   padding-left: 1.5em;
   padding-right: 1.5em;
 }
+#projects-timeline-bar .active-dot {
+  background-color: var(--accent-color);
+  border-color: var(--main-color);
+}
 
 #projects-timeline-full {
   height: 8px;
   border-radius: 10px;
-  background-color: gray;
+  background-color: lightgray;
   position: relative;
 }
 
 #timeline-progress {
-  background-color: #3ddc84;
+  background-color: var(--main-color);
   height: 100%;
   border-radius: 20px;
-  transition: all 400ms cubic-bezier(0.42, 0.26, 0.04, 0.84);
+  transition: all 300ms cubic-bezier(0.42, 0.26, 0.04, 0.84);
 }
 
 #project-aligator-point {
   width: 18px;
   height: 18px;
   border-radius: 9px;
-  background-color: gray;
-  border: 4px solid #3ddc84;
+  background-color: lightgray;
+  border: 4px solid lightgray;
   box-sizing: border-box;
   position: absolute;
   top: -5px;
@@ -410,7 +430,8 @@ main > section > h2 {
   transition: all 400ms cubic-bezier(0.42, 0.26, 0.04, 0.84);
 }
 #project-aligator-point:hover {
-  background-color: #ececec;
+  background-color: var(--main-color);
+  border-color: var(--accent-color);
 }
 #project-aligator-point a {
   position: absolute;
@@ -426,8 +447,8 @@ main > section > h2 {
   width: 18px;
   height: 18px;
   border-radius: 9px;
-  background-color: gray;
-  border: 4px solid #3ddc84;
+  background-color: lightgray;
+  border: 4px solid lightgray;
   box-sizing: border-box;
   position: absolute;
   top: -5px;
@@ -437,7 +458,8 @@ main > section > h2 {
   left: calc(50% - 9px);
 }
 #project-crave-point:hover {
-  background-color: #ececec;
+  background-color: var(--main-color);
+  border-color: var(--accent-color);
 }
 #project-crave-point a {
   position: absolute;
@@ -453,8 +475,8 @@ main > section > h2 {
   width: 18px;
   height: 18px;
   border-radius: 9px;
-  background-color: gray;
-  border: 4px solid #3ddc84;
+  background-color: lightgray;
+  border: 4px solid lightgray;
   box-sizing: border-box;
   position: absolute;
   top: -5px;
@@ -464,7 +486,8 @@ main > section > h2 {
   left: calc(100% - 18px);
 }
 #project-kifflom-point:hover {
-  background-color: #ececec;
+  background-color: var(--main-color);
+  border-color: var(--accent-color);
 }
 #project-kifflom-point a {
   position: absolute;
@@ -480,10 +503,6 @@ main > section > h2 {
   margin-bottom: 7em;
 }
 
-#projects-sticky-container .active-dot {
-  background-color: #3ddc84;
-}
-
 #skills .skills-container {
   display: flex;
   gap: 0.5em 1.4em;
@@ -491,8 +510,8 @@ main > section > h2 {
   flex-wrap: wrap;
 }
 #skills .skills-container .skill {
-  border-color: #3ddc84;
-  color: #3ddc84;
+  border-color: var(--main-color);
+  color: var(--main-color);
   border-style: solid;
   border-width: 0.5em;
   width: 6em;
@@ -514,6 +533,7 @@ main > section > h2 {
 #skills h3 {
   font-size: 1.7em;
   margin-bottom: 0.6em;
+  margin-left: 0.3em;
 }
 
 .center-cont {

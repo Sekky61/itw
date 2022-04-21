@@ -16,7 +16,7 @@
     height: vars.$mobile-border-thickness;
 }
 
-@include vars.breakpoint(desktop) {
+@include vars.desktop {
     #name {
         z-index: 3;
         font-size: 4em;
@@ -48,8 +48,6 @@ nav {
 
     box-sizing: border-box;
 
-    transition: all 0.25s cubic-bezier(0.65, 0.05, 0.36, 1);
-
     * {
         transition: inherit;
     }
@@ -58,6 +56,8 @@ nav {
         &:hover {
             text-decoration: underline;
         }
+
+        transition: all 0.25s cubic-bezier(0.65, 0.05, 0.36, 1);
 
         margin-top: 1em;
         margin-bottom: 1em;
@@ -72,7 +72,7 @@ nav {
 
 .active {
     padding: 10px;
-    background-color: white;
+    background-color: vars.$accent-color;
     border-radius: 4px;
     color: black;
 }
@@ -89,7 +89,7 @@ nav {
     height: auto;
 }
 
-@include vars.breakpoint(desktop) {
+@include vars.desktop {
     #header #nav {
         // specificity workaround
         position: fixed;

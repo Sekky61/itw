@@ -82,7 +82,7 @@
     bottom: calc(53% + vars.$social-margin);
 }
 
-@include vars.breakpoint(desktop) {
+@include vars.desktop {
     .socials-container {
         flex-direction: column;
     }
@@ -90,7 +90,7 @@
 
 .social {
     background-color: vars.$main-color;
-    color: white;
+    color: vars.$accent-color;
     width: vars.$social-width;
     height: vars.$social-width;
 
@@ -99,4 +99,8 @@
     align-items: center;
 
     font-size: 40px;
+
+    &:hover {
+        color: white;
+    }
 }

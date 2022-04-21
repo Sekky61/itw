@@ -70,3 +70,23 @@ function projects_scroll_callback() {
         }
     });
 }
+
+// Mouse watcher
+
+const EDU_TIMELINE = document.querySelector("#edu-timeline");
+
+// #education litener
+scroll_elements[1].addEventListener('mousemove', e => {
+
+    let bounds = EDU_TIMELINE.getBoundingClientRect();
+    let x = e.clientX - bounds.left;
+    let y = e.clientY - bounds.top;
+
+    let edu_x = EDU_TIMELINE.offsetWidth;
+    let edu_y = EDU_TIMELINE.offsetHeight;
+    let x_per = x / edu_x * 100;
+    let y_per = y / edu_y * 100;
+
+    EDU_TIMELINE.style.backgroundImage = 'radial-gradient(at ' + x_per + '% ' + y_per + '%, var(--accent-color), var(--main-color))';
+    // 'background', 'radial-gradient(at ' + mouseXpercentage + '% ' + mouseYpercentage + '%, #3498db, #9b59b6)'
+});
