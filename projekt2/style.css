@@ -162,7 +162,7 @@ main {
 }
 header {
   z-index: 5;
-  position: fixed;
+  position: sticky;
   top: 0;
 }
 
@@ -276,10 +276,11 @@ main > section > h2 {
   display: flex;
   flex-direction: column;
 }
-#about .rectangle-container {
-  flex-grow: 1;
-  position: relative;
-  max-width: 1200px;
+
+.rectangle-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .name-rect {
@@ -293,13 +294,7 @@ main > section > h2 {
   border-color: var(--main-color);
   border-style: solid;
   font-size: 1.1em;
-  display: inline-block;
   padding: 20px;
-  position: absolute;
-  width: 400px;
-  height: 200px;
-  right: min(50% - 40px, 100% - 480px);
-  top: 47%;
   backdrop-filter: blur(10px);
 }
 .info-rect h3 {
@@ -314,33 +309,53 @@ main > section > h2 {
   font-size: 1.2em;
 }
 
-.picture-rect {
-  border-width: 20px;
-  border-color: var(--main-color);
-  border-style: solid;
-  background-image: url(assets/headshot.jpg);
-  background-size: cover;
-  display: inline-block;
-  position: absolute;
-  width: 390px;
-  height: 390px;
-  left: min(50% - 40px, 100% - 430px);
-  top: 10%;
-}
-
 .socials-container {
   display: flex;
   flex-direction: column;
   gap: 27px;
   flex-direction: row;
-  position: absolute;
-  right: calc(50% + 40px + 27px);
-  bottom: calc(53% + 27px);
+}
+
+.picture-rect {
+  border-width: 20px;
+  border-color: var(--main-color);
+  border-style: solid;
+  box-sizing: border-box;
+  background-size: cover;
+  display: inline-block;
+}
+.picture-rect img {
+  width: 390px;
 }
 
 @media (min-width: 768px) {
+  .rectangle-container {
+    flex-grow: 1;
+    position: relative;
+    max-width: 1200px;
+  }
+
+  .picture-rect {
+    position: absolute;
+    left: min(50% - 40px, 100% - 430px);
+    top: 10%;
+  }
+
   .socials-container {
     flex-direction: column;
+    position: absolute;
+    right: calc(50% + 40px + 27px);
+    bottom: calc(53% + 27px);
+  }
+
+  .info-rect {
+    display: inline-block;
+    padding: 20px;
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    right: min(50% - 40px, 100% - 480px);
+    top: 47%;
   }
 }
 .social {
@@ -377,16 +392,37 @@ main > section > h2 {
 }
 #projects section h3 {
   font-size: 1.8em;
+  margin-bottom: 0.3em;
+}
+#projects section h4 {
+  font-size: 1.2em;
+  padding-bottom: 0.2em;
   margin-bottom: 0.8em;
+  border-bottom: 2px solid var(--accent-color);
 }
 #projects section div {
-  font-size: 1.2em;
-  margin-bottom: 0.3em;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 20px;
 }
 #projects section p {
   max-width: 60ch;
 }
+#projects section img {
+  width: 100%;
+  object-fit: cover;
+}
 
+@media (min-width: 768px) {
+  #projects section div {
+    flex-direction: row;
+  }
+  #projects section img {
+    height: 200px;
+    width: auto;
+  }
+}
 #projects-timeline-bar {
   position: sticky;
   background-color: var(--background-color);

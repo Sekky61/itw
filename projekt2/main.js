@@ -87,6 +87,5 @@ scroll_elements[1].addEventListener('mousemove', e => {
     let x_per = x / edu_x * 100;
     let y_per = y / edu_y * 100;
 
-    EDU_TIMELINE.style.backgroundImage = 'radial-gradient(at ' + x_per + '% ' + y_per + '%, var(--accent-color), var(--main-color))';
-    // 'background', 'radial-gradient(at ' + mouseXpercentage + '% ' + mouseYpercentage + '%, #3498db, #9b59b6)'
+    EDU_TIMELINE.style.borderImage = 'radial-gradient(at ' + x_per + '% ' + y_per + '%, var(--accent-color), var(--main-color)) 30';
 });
