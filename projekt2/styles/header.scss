@@ -97,17 +97,22 @@ nav {
 }
 
 @include vars.desktop {
-    #header #nav {
-        // specificity workaround
-        position: fixed;
-        top: vars.$border-thickness;
-        left: vars.$border-thickness;
-        height: auto;
-        max-height: 100%;
 
-        background-color: transparent;
-        margin-left: 0.8em;
+    #header {
+        margin-bottom: 0px;
 
-        margin-top: 100px;
+        #nav {
+            // specificity workaround
+            position: fixed;
+            top: vars.$border-thickness;
+            left: vars.$border-thickness;
+            height: auto;
+            max-height: 100%;
+
+            background-color: transparent;
+            margin-left: 0.8em;
+
+            margin-top: 100px;
+        }
     }
 }

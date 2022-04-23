@@ -218,6 +218,9 @@ nav li a {
 }
 
 @media (min-width: 768px) {
+  #header {
+    margin-bottom: 0px;
+  }
   #header #nav {
     position: fixed;
     top: 25px;
